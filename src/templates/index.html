@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ua">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Goods parser</title>
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/templatemo_main.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center templatemo-logo margin-top-20 margin-bottom-20">
+        <h1 class="templatemo-site-title">
+            <a href="#">Goods parser</a>
+        </h1>
+
+        <h3 class="templatemo-site-title margin-bottom-20">
+            by <a href="#"><span class="blue">r.kore</span><span class="green">ts</span></a>
+        </h3>
+    </div>
+
+    <div class="image-section">
+        <div class="image-container">
+            <img src="images/index.jpg" id="menu-img" class="main-img inactive" alt="background-image">
+        </div>
+    </div>
+
+<div class="container">
+    <form id="select-form" method="post">
+        <div class="row row-cols-3 text-center">
+            <div class="col">
+                <h2 style="color: white">Select site #1</h2>
+            </div>
+
+            <div class="col ">
+                <h2 style="color: white">Filter:</h2>
+            </div>
+
+            <div class="col">
+                <h2 style="color: white">Select site #2</h2>
+            </div>
+
+            <div class="col">
+                 <select class="form-control " size="1" aria-label="size 2" name="site">
+                 <option selected="selected" value="empty">--------</option>
+                    {% for field in site %}
+                 <option value="{{ field.name }}">{{ field.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col text-left" style="color: white">
+                <div class="row row-cols-4 text-left">
+                    {% for field in categories %}
+                     <input type="checkbox" name="categories" value="{{ field }}">
+                     <label for="vehicle">{{ field }}</label>
+                    {% endfor %}
+                </div>
+             </div>
+
+            <div class="col">
+                <select class="form-control " size="1" aria-label="size 2" name="site">
+                    <option selected="selected" value="empty">--------</option>
+                    {% for field in site %}
+                    <option value="{{ field.name }}">{{ field.name }}</option>
+                     {% endfor %}
+                 </select>
+            </div>
+
+            <div class="col"></div>
+            <div class="col">
+                <input class="btn btn-secondary btn-block margin-top-20" style="background-color: black" type="submit"  onclick="this.form.submit(); this.disabled=true; this.value='In process…';" id="btn-sub" form="select-form" value="Start">
+            </div>
+            <div class="col"></div>
+        </div>
+    </form>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/templatemo_script.js"></script>
+
+</body>
+</html>

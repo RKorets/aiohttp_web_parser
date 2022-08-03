@@ -1,0 +1,10 @@
+mysql:
+  database: goods_parser
+  user: root
+  password: password
+  host: localhost
+  port: 3306
+  minsize: 1
+  maxsize: 5
+cache_time:
+  time: 30
